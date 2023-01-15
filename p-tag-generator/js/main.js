@@ -54,7 +54,7 @@ async function copyContent(text, targetNode) {
 document.querySelector("#input").addEventListener("input", generateTags);
 
 document.querySelector("#aliasInput").addEventListener("input", (event) => {
-  sectionBreakAlias = event.target.value;
+  sectionBreakAlias = event.target.value.trim();
 
   document.querySelector(
     "[for='sectionHtml']"
@@ -64,7 +64,7 @@ document.querySelector("#aliasInput").addEventListener("input", (event) => {
 });
 
 document.querySelector("#sectionInput").addEventListener("input", (event) => {
-  sectionBreakHtml = event.target.value;
+  sectionBreakHtml = event.target.value.trim();
 
   generateTags();
 });
@@ -102,8 +102,8 @@ document
   });
 
 function init() {
-  sectionBreakAlias = document.querySelector("#aliasInput").value;
-  sectionBreakHtml = document.querySelector("#sectionInput").value;
+  sectionBreakAlias = document.querySelector("#aliasInput").value.trim();
+  sectionBreakHtml = document.querySelector("#sectionInput").value.trim();
 
   generateTags();
 }
