@@ -1,9 +1,14 @@
-const defaultSectBreakAlias = "***";
-const defaultSectBreakHtml = '<p class="section-break">•••</p>';
+const defaultSettings = {
+  sectionBreakAlias: "***",
+  sectionBreakHtml: '<p class="section-break">•••</p>',
+  applyDropCaps: true,
+  saveInput: false,
+};
 
-let sectionBreakAlias = defaultSectBreakAlias;
-let sectionBreakHtml = defaultSectBreakHtml;
-let applyDropCaps = true;
+let sectionBreakAlias = defaultSettings.sectionBreakAlias;
+let sectionBreakHtml = defaultSettings.sectionBreakHtml;
+let applyDropCaps = defaultSettings.applyDropCaps;
+let saveInput = defaultSettings.saveInput;
 
 function generateTags() {
   const inputValue = document.querySelector("#input").value;
@@ -91,7 +96,6 @@ function createCheckbox(checkboxEl) {
 }
 
 function toggleCheckbox(event, checkboxEl) {
-
   if (event.target.checked) {
     checkboxEl.classList.replace("unchecked", "checked");
     applyDropCaps = true;
@@ -101,7 +105,88 @@ function toggleCheckbox(event, checkboxEl) {
   }
 
   // Regenerate tags
-  generateTags()
+  generateTags();
+}
+
+function saveSettings() {
+  const settings = {
+    sectionBreakAlias,
+    sectionBreakHtml,
+    applyDropCaps,
+    saveInput,
+  };
+
+  localStorage.setItem("ptag-settings", JSON.stringify(settings));
+}
+
+function loadSettings() {
+  let settings = localStorage.getItem("ptag-settings");
+  settings = JSON.parse(settings);
+
+  if (!settings) {
+    saveSettings();
+    return;
+  }
+
+  sectionBreakAlias = settings.sectionBreakAlias;
+  document.querySelector("#aliasInput").value = sectionBreakAlias;
+
+  sectionBreakHtml = settings.sectionBreakHtml;
+  document.querySelector("#sectionInput").value = sectionBreakHtml;
+
+  applyDropCaps = settings.applyDropCaps;
+  document.querySelector("#checkDropCaps").checked = applyDropCaps;
+
+  const dropCapsCheckbox = document.querySelector(
+    '[for="checkDropCaps"] .checkbox'
+  );
+
+  if (applyDropCaps) {
+    dropCapsCheckbox.classList.replace("unchecked", "checked");
+  } else {
+    dropCapsCheckbox.classList.replace("checked", "unchecked");
+  }
+
+  saveInput = settings.saveInput;
+}
+
+function resetSettings() {
+  // Reset section break alias
+  sectionBreakAlias = defaultSettings.sectionBreakAlias;
+
+  // Reset alias UI
+  document.querySelector("#aliasInput").value = sectionBreakAlias;
+  document.querySelector(
+    "[for='sectionHtml']"
+  ).innerHTML = `Replace <i>${sectionBreakAlias}</i> with:`;
+
+  // Reset section break HTML
+  sectionBreakHtml = defaultSettings.sectionBreakHtml;
+
+  // Reset HTML UI
+  document.querySelector("#sectionInput").value = sectionBreakHtml;
+
+  // Reset drop caps
+  applyDropCaps = defaultSettings.applyDropCaps;
+
+  // Reset drop caps UI
+  document.querySelector("#checkDropCaps").checked = applyDropCaps;
+
+  const dropCapsCheckbox = document.querySelector(
+    '[for="checkDropCaps"] .checkbox'
+  );
+
+  if (applyDropCaps) {
+    dropCapsCheckbox.classList.replace("unchecked", "checked");
+  } else {
+    dropCapsCheckbox.classList.replace("checked", "unchecked");
+  }
+
+  // Regenerate tags
+  generateTags();
+
+  // Save default settings
+  saveSettings();
 }
 
 document.querySelector("#input").addEventListener("input", generateTags);
@@ -141,6 +226,9 @@ document.querySelector("#output").addEventListener("click", (event) => {
 // Settings Menu
 document.querySelector("#closeBtn").addEventListener("click", () => {
   document.querySelector(".settings-container").style.display = "none";
+
+  // Save settings on close
+  saveSettings();
 });
 
 document.querySelector("#openBtn").addEventListener("click", () => {
@@ -152,19 +240,22 @@ document
   .addEventListener("click", (event) => {
     if (event.target.classList.contains("settings-container")) {
       document.querySelector(".settings-container").style.display = "none";
+
+      // Save settings on close
+      saveSettings();
     }
   });
 
 // Initialize Checkboxes
 document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-  console.log(checkbox);
+  checkbox.checked = applyDropCaps;
   createCheckbox(checkbox);
 });
 
-function init() {
-  sectionBreakAlias = document.querySelector("#aliasInput").value.trim();
-  sectionBreakHtml = document.querySelector("#sectionInput").value.trim();
+document.querySelector(".reset").addEventListener("click", resetSettings);
 
+function init() {
+  loadSettings();
   generateTags();
 }
 

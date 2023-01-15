@@ -86,9 +86,6 @@ textarea {
   background-color: var(--color-green-hover);
 }
 
-.input-container textarea {
-}
-
 .output-container .wrapper {
   display: flex;
   justify-content: space-between;
@@ -148,7 +145,13 @@ textarea.type {
 }
 
 .settings-menu h1 {
+  font-size: 2.5em;
   text-align: center;
+
+  margin: 0;
+  margin-top: 0.25em;
+
+  letter-spacing: 0.5px;
 }
 
 .settings-menu .container {
@@ -166,6 +169,11 @@ textarea.type {
 
 .settings-menu label {
   margin-left: 1em;
+}
+
+label[for="sectionHtml"] i {
+  font-family: var(--font-serif);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .settings-menu textarea {
@@ -223,24 +231,28 @@ input[type="checkbox"].hide {
 }
 
 .checkbox {
-  display: inline-block;
   width: 50px;
   height: 25px;
+
   background: var(--color-green);
   border-radius: 20px;
+
   padding: 5px;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
 
   cursor: pointer;
 }
 
 .checkbox-switch {
-  display: block;
   width: 25px;
   height: 25px;
+
   border-radius: 100%;
   background: var(--color-text);
-  transition: 0.4s ease-in-out;
+
+  display: block;
+
+  transition: 0.3s ease-in-out;
 }
 
 .checkbox.checked {
@@ -257,4 +269,19 @@ input[type="checkbox"].hide {
 
 .chkBox.unchecked .chkBox-switch {
   transform: translate(0);
+}
+
+/* Reset button */
+.reset {
+  width: fit-content;
+
+  color: var(--color-red);
+  border-bottom: 1px solid var(--color-red);
+
+  margin: 0 1em;
+  cursor: pointer;
+}
+
+.reset:hover {
+  border-bottom: 1px solid transparent;
 }
