@@ -62,6 +62,48 @@ async function copyContent(text, targetNode) {
   }
 }
 
+// Replace native checkbox with custom checkbox
+function createCheckbox(checkboxEl) {
+  if (!checkboxEl) {
+    return;
+  }
+
+  const checkboxLabel = checkboxEl.parentElement;
+
+  // Checkbox
+  const checkbox = document.createElement("div");
+  checkbox.classList.add("checkbox");
+  checkbox.classList.add(`${applyDropCaps ? "checked" : "unchecked"}`);
+
+  // Checkbox Switch
+  const checkboxSwitch = document.createElement("span");
+  checkboxSwitch.classList.add("checkbox-switch");
+
+  checkbox.appendChild(checkboxSwitch);
+  checkboxLabel.appendChild(checkbox);
+
+  checkboxEl.classList.add("hide");
+
+  // Listen for click
+  checkboxEl.addEventListener("change", (event) => {
+    toggleCheckbox(event, checkbox);
+  });
+}
+
+function toggleCheckbox(event, checkboxEl) {
+
+  if (event.target.checked) {
+    checkboxEl.classList.replace("unchecked", "checked");
+    applyDropCaps = true;
+  } else {
+    checkboxEl.classList.replace("checked", "unchecked");
+    applyDropCaps = false;
+  }
+
+  // Regenerate tags
+  generateTags()
+}
+
 document.querySelector("#input").addEventListener("input", generateTags);
 
 document.querySelector("#aliasInput").addEventListener("input", (event) => {
@@ -96,6 +138,7 @@ document.querySelector("#output").addEventListener("click", (event) => {
   copyContent(text, event.target.parentElement.querySelector("button"));
 });
 
+// Settings Menu
 document.querySelector("#closeBtn").addEventListener("click", () => {
   document.querySelector(".settings-container").style.display = "none";
 });
@@ -111,6 +154,12 @@ document
       document.querySelector(".settings-container").style.display = "none";
     }
   });
+
+// Initialize Checkboxes
+document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+  console.log(checkbox);
+  createCheckbox(checkbox);
+});
 
 function init() {
   sectionBreakAlias = document.querySelector("#aliasInput").value.trim();

@@ -9,10 +9,19 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
 
 :root {
+  --font-serif: "PT Serif", serif;
+  --front-monospace: "Menlo Regular", monospace;
+
   --color-darkgray: #131314;
   --color-gray: #222224;
   --color-lightgray: #303033;
   --color-text: rgba(255, 255, 255, 0.9);
+  --color-green: green;
+  --color-green-hover: #016f01;
+  --color-red: #a93539;
+  --color-red-hover: #95292c;
+
+  --theme-transition: 0.1s all ease;
 }
 
 main {
@@ -62,19 +71,19 @@ textarea {
   width: 100%;
 
   color: var(--color-text);
-  background-color: green;
+  background-color: var(--color-green);
 
   border: none;
   border-radius: 0 0 20px 20px;
   padding: 0.5em 1em;
 
   cursor: pointer;
-  transition: 0.1s all ease;
+  transition: var(--theme-transition);
 }
 
 .input-container button:hover,
 .output-container button:hover {
-  background-color: rgb(1, 111, 1);
+  background-color: var(--color-green-hover);
 }
 
 .input-container textarea {
@@ -92,7 +101,7 @@ textarea {
   margin-right: 1em;
   cursor: pointer;
 
-  transition: 0.1s all ease;
+  transition: var(--theme-transition);
 }
 
 .output-container .wrapper i:hover {
@@ -104,14 +113,14 @@ textarea {
 }
 
 textarea.code {
-  font-family: "Menlo Regular", monospace;
+  font-family: var(--front-monospace);
   font-size: 12px;
   /* line-height: 1.6; */
   padding: 18px;
 }
 
 textarea.type {
-  font-family: "PT Serif", serif;
+  font-family: var(--font-serif);
   font-size: 18px;
   line-height: 1.6;
 }
@@ -187,7 +196,7 @@ p.credit a:hover {
   width: 100%;
 
   color: var(--color-text);
-  background-color: rgb(169, 53, 57);
+  background-color: var(--color-red);
 
   border: none;
   border-radius: 0 0 20px 20px;
@@ -195,9 +204,57 @@ p.credit a:hover {
   padding: 0.5em 1em;
 
   cursor: pointer;
-  transition: 0.1s all ease;
+  transition: var(--theme-transition);
 }
 
 #closeBtn:hover {
-  background-color: rgb(149, 41, 44);
+  background-color: var(--color-red-hover);
+}
+
+/* Custom Checkbox */
+input[type="checkbox"].hide {
+  display: none;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.checkbox {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background: var(--color-green);
+  border-radius: 20px;
+  padding: 5px;
+  transition: 0.4s ease-in-out;
+
+  cursor: pointer;
+}
+
+.checkbox-switch {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background: var(--color-text);
+  transition: 0.4s ease-in-out;
+}
+
+.checkbox.checked {
+  background: var(--color-green);
+}
+
+.checkbox.checked .checkbox-switch {
+  transform: translate(24px);
+}
+
+.checkbox.unchecked {
+  background: var(--color-gray);
+}
+
+.chkBox.unchecked .chkBox-switch {
+  transform: translate(0);
 }
