@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "Menlo Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Menlo Regular"),
+    url("../../assets/Menlo-Regular.woff") format("woff");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+
+:root {
+  --color-darkgray: #131314;
+  --color-gray: #222224;
+  --color-lightgray: #303033;
+  --color-text: rgba(255, 255, 255, 0.9);
+}
+
+main {
+  height: 100vh;
+
+  color: var(--color-text);
+  font-family: var(--global-sans-serif);
+  background-color: var(--color-gray);
+
+  display: flex;
+  gap: 1em;
+
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-left: 0.5em;
+}
+
+.input-container,
+.output-container {
+  width: 50%;
+}
+
+textarea {
+  color: var(--color-text);
+  background-color: var(--color-darkgray);
+
+  border: none;
+  border-radius: 20px 20px 0 0;
+
+  padding: 1em;
+
+  box-sizing: border-box;
+  resize: none;
+}
+
+.input-container textarea,
+.output-container textarea {
+  height: 75%;
+  width: 100%;
+}
+
+.input-container button,
+.output-container button {
+  width: 100%;
+
+  color: var(--color-text);
+  background-color: green;
+
+  border: none;
+  border-radius: 0 0 20px 20px;
+  padding: 0.5em 1em;
+
+  cursor: pointer;
+  transition: 0.1s all ease;
+}
+
+.input-container button:hover,
+.output-container button:hover {
+  background-color: rgb(1, 111, 1);
+}
+
+.input-container textarea {
+}
+
+.output-container .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.output-container .wrapper i {
+  font-size: 1.7em;
+
+  margin-right: 1em;
+  cursor: pointer;
+
+  transition: 0.1s all ease;
+}
+
+.output-container .wrapper i:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.output-container textarea {
+  cursor: pointer;
+}
+
+textarea.code {
+  font-family: "Menlo Regular", monospace;
+  font-size: 12px;
+  /* line-height: 1.6; */
+  padding: 18px;
+}
+
+textarea.type {
+  font-family: "PT Serif", serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Settings */
+.settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: none;
+}
+
+.settings-menu {
+  border-radius: 30px;
+
+  background-color: var(--color-lightgray);
+  box-shadow: 3px 9px 18px rgba(0, 0, 0, 0.2);
+}
+
+.settings-menu h1 {
+  text-align: center;
+}
+
+.settings-menu .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  padding: 1em;
+}
+
+.settings-menu .container > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-menu label {
+  margin-left: 1em;
+}
+
+.settings-menu textarea {
+  border-radius: 20px;
+
+  margin-top: 0.25em;
+}
+
+p.credit {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+
+  margin: 0 1em;
+}
+
+p.credit a {
+  color: inherit;
+  text-decoration: none;
+
+  border-bottom: 1px solid white;
+}
+
+p.credit a:hover {
+  border-bottom: none;
+}
+
+#closeBtn {
+  width: 100%;
+
+  color: var(--color-text);
+  background-color: rgb(169, 53, 57);
+
+  border: none;
+  border-radius: 0 0 20px 20px;
+
+  padding: 0.5em 1em;
+
+  cursor: pointer;
+  transition: 0.1s all ease;
+}
+
+#closeBtn:hover {
+  background-color: rgb(149, 41, 44);
+}

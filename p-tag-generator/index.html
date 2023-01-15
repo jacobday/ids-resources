@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="https://jacob.day/css/global.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Fontawesome 6 -->
+    <script
+      src="https://kit.fontawesome.com/e47b80ef99.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title><p> Generator</title>
+  </head>
+  <body>
+    <main>
+      <div class="input-container">
+        <h2>Input</h2>
+
+        <textarea
+          id="input"
+          class="type"
+          placeholder="Paste story here"
+        ></textarea>
+        <button class="copy-button">Copy</button>
+      </div>
+
+      <div class="output-container">
+        <div class="wrapper">
+          <h2>Output</h2>
+          <i id="openBtn" class="fa-solid fa-gear"></i>
+        </div>
+
+        <textarea id="output" class="code" placeholder="" readonly></textarea>
+        <button class="copy-button">Copy</button>
+      </div>
+
+      <div class="settings-container">
+        <div class="settings-menu">
+          <div class="container">
+            <h1>Settings</h1>
+
+            <div>
+              <label for="sectionAlias">Section break alias:</label>
+              <textarea
+                name="sectionAlias"
+                id="aliasInput"
+                class="type"
+                placeholder="Default: ***"
+                value="***"
+              >
+    ***</textarea
+              >
+            </div>
+
+            <div>
+              <label for="sectionHtml">Replace *** with:</label>
+              <textarea
+                name="sectionHtml"
+                id="sectionInput"
+                class="code"
+                placeholder="Default: <div class='section-break'></div>"
+              >
+    <div class="section-break"></div></textarea
+              >
+            </div>
+
+            <p class="credit">
+              Inspired by
+              <a
+                href="https://github.com/carsonology/buildout-template"
+                target="_blank"
+                >Carson TerBush's p-tag generator</a
+              >
+            </p>
+          </div>
+          <button id="closeBtn">Close</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
