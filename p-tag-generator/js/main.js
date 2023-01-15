@@ -1,12 +1,17 @@
-let sectionBreakAlias = "***";
-let sectionBreakHtml = `<div class="section-break"></div>`;
+const defaultSectBreakAlias = "***";
+const defaultSectBreakHtml = '<p class="section-break">•••</p>';
+
+let sectionBreakAlias = defaultSectBreakAlias;
+let sectionBreakHtml = defaultSectBreakHtml;
+let applyDropCaps = true;
 
 function generateTags() {
   const inputValue = document.querySelector("#input").value;
   const paragraphs = inputValue.split("\n");
 
   let result = "";
-  paragraphs.forEach((paragraph) => {
+  let isPrevSectionBreak = false;
+  paragraphs.forEach((paragraph, index) => {
     const paragraphText = paragraph.trim();
     if (paragraphText === "") {
       // Ignore empty strings
@@ -14,9 +19,15 @@ function generateTags() {
     } else if (paragraphText === sectionBreakAlias) {
       // Add section break
       result += sectionBreakHtml;
+      isPrevSectionBreak = true;
     } else {
       // Add p tag
-      result += `<p>${paragraphText}</p>`;
+      if (applyDropCaps && (index == 0 || isPrevSectionBreak)) {
+        result += `<p class="dropcap">${paragraphText}</p>`;
+      } else {
+        result += `<p>${paragraphText}</p>`;
+      }
+      isPrevSectionBreak = false;
     }
 
     // Add new line
