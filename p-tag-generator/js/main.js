@@ -10,6 +10,8 @@ let sectionBreakHtml = defaultSettings.sectionBreakHtml;
 let applyDropCaps = defaultSettings.applyDropCaps;
 let saveInput = defaultSettings.saveInput;
 
+// Splits text input into paragraphs
+// & adds HTML tags to each paragraph
 function generateTags() {
   const inputValue = document.querySelector("#input").value;
   const paragraphs = inputValue.split("\n");
@@ -42,6 +44,8 @@ function generateTags() {
   document.querySelector("#output").innerHTML = result.trim();
 }
 
+// Writes the given text to the clipboard
+// & updates copy button to show the text has been copied
 async function copyContent(text, targetNode) {
   try {
     await navigator.clipboard.writeText(text);
@@ -95,6 +99,7 @@ function createCheckbox(checkboxEl) {
   });
 }
 
+// Toggles given checkbox element
 function toggleCheckbox(event, checkboxEl) {
   if (event.target.checked) {
     checkboxEl.classList.replace("unchecked", "checked");
@@ -108,6 +113,7 @@ function toggleCheckbox(event, checkboxEl) {
   generateTags();
 }
 
+// Saves the current settings to local storage
 function saveSettings() {
   const settings = {
     sectionBreakAlias,
@@ -119,6 +125,7 @@ function saveSettings() {
   localStorage.setItem("ptag-settings", JSON.stringify(settings));
 }
 
+// Loads the saved settings from local storage
 function loadSettings() {
   let settings = localStorage.getItem("ptag-settings");
   settings = JSON.parse(settings);
@@ -150,6 +157,7 @@ function loadSettings() {
   saveInput = settings.saveInput;
 }
 
+// Reset current settings to default
 function resetSettings() {
   // Reset section break alias
   sectionBreakAlias = defaultSettings.sectionBreakAlias;
