@@ -1,0 +1,87 @@
+:root {
+  --color-darkgray: #131314;
+  --color-gray: #222224;
+  --color-lightgray: #303033;
+  --color-heading: rgba(255, 255, 255, 0.87);
+  --color-text: rgba(255, 255, 255, 0.65);
+}
+
+* {
+  font-family: var(--global-sans-serif);
+}
+
+body {
+  background-color: var(--color-gray);
+}
+
+/* Navbar */
+nav {
+  padding: 1.5em 3em;
+}
+
+nav h1 {
+  color: var(--color-heading);
+  margin: 0;
+}
+
+/* Tools & Templates Section */
+.tools-templates {
+  padding-left: 3em;
+}
+
+.tools-templates h2 {
+  color: var(--color-heading);
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  margin: 2em 0;
+}
+
+.tools-templates .container {
+  display: flex;
+}
+
+/* Cards */
+.card {
+  color: var(--color-text);
+  background-color: var(--color-darkgray);
+
+  text-decoration: none;
+
+  border-radius: 6px;
+  border: 1.5px solid var(--color-lightgray);
+
+  display: flex;
+  overflow: hidden;
+
+  transition: 0.1s all ease;
+}
+
+.card:hover {
+  border: 1.5px solid var(--color-text);
+}
+
+.card img {
+  height: 200px;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+  object-position: left;
+}
+
+.card .meta-container {
+  padding: 1em;
+}
+
+.card h3 {
+  color: var(--color-heading);
+  font-size: 1.25em;
+
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.card p {
+  font-size: 0.9em;
+}
