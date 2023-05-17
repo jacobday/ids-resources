@@ -1,0 +1,100 @@
+html {
+  /* 
+    Un-comment to scroll smoothly between sections
+    Not recommended for long pages
+  */
+  /* scroll-behavior: smooth; */
+}
+
+/* Dynamic Nav Styling */
+#dynamicNav {
+  height: 30px;
+
+  opacity: 0;
+  transition: 1s;
+}
+
+#dynamicNav .list {
+  width: 100%;
+  text-align: center;
+  background-color: #000;
+
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+
+  padding-bottom: 10px;
+
+  position: absolute;
+  top: 66%;
+
+  display: none;
+  z-index: 999;
+}
+
+#dynamicNav .list div,
+#activeSection {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Inter", sans-serif;
+
+  border-bottom: none;
+  cursor: pointer;
+}
+
+#dynamicNav .list .active {
+  font-weight: 600;
+}
+
+#activeSection {
+  width: 100%;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#activeSection .label {
+  width: 135px;
+}
+
+/* MEDIA QUERIES FROM SMALLEST TO LARGEST = MOBILE FIRST */
+/* use these for responsive design — you can set different styles based on how wide the screen is */
+/* Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #activeSection {
+    display: none;
+  }
+
+  #dynamicNav .list {
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: row;
+    gap: unset;
+
+    position: unset;
+  }
+
+  #dynamicNav .list div:hover,
+  #dynamicNav .list .active {
+    font-weight: unset;
+    border-bottom: 1px white solid;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

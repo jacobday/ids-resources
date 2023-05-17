@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="./css/ids.css" />
+    <link rel="stylesheet" href="./css/dynamicNav.css" />
+    <link rel="stylesheet" href="./css/example.css" />
+
+    <!-- Font Awesome — for the social media icons and hamburger menu icon -->
+    <script
+      src="https://kit.fontawesome.com/ea52966d59.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Dynamic Navbar Template</title>
+  </head>
+  <body>
+    <!-- Transparent navbar -->
+    <nav>
+      <ul>
+        <li class="logo">
+          <a href="https://www.idsnews.com">
+            <!-- IDS LOGO SVG -->
+            <svg viewBox="0 0 163.17 68.85">
+              <path style="fill: white" d="M0,67.77V1.08H19.89V67.77Z" />
+              <path
+                style="fill: white"
+                d="M32.85,67.77V1.08H58.32c19.44,0,38.34,6.21,38.34,33.3,0,26.64-20.07,33.39-39.6,33.39ZM52.74,50.4h5.85c12.06,0,17.91-4.41,17.91-16s-5.67-15.3-18.81-15.3H52.74Z"
+              />
+              <path
+                style="fill: white"
+                d="M98.82,59l9.54-13.59c6.66,4.59,15.93,7,23.31,7,9.45,0,11.7-2.16,11.7-4.86s-2.7-3.78-12.51-4.59c-14.31-1.17-28.26-4.86-28.26-21.15C102.6,5.67,115.83,0,131,0c15.84,0,24.48,4.05,29.16,7.83l-9.9,14.31c-3.78-2.52-12.33-4.77-19-4.77s-8.73,1.08-8.73,3.69c0,3.24,2.79,4.05,12.69,4.86,14.94,1.26,28,4.14,28,20.7,0,13.5-11.52,22.23-30.87,22.23C114.66,68.85,105.84,64.53,98.82,59Z"
+              />
+            </svg>
+          </a>
+          <span id="slug">Dynamic Navbar Template</span>
+          <!-- slug auto pulls from metadata.json -->
+        </li>
+        <li class="toggle">
+          <i class="fas fa-bars fa-lg"></i>
+        </li>
+        <li id="socials" class="item">
+          <!-- links generate automatically from metadata.json -->
+        </li>
+      </ul>
+
+      <!-- ! dynamicNav Start -->
+      <div id="dynamicNav">
+        <div id="activeSection">
+          <div class="label">Table of Contents</div>
+          <i
+            class="fas fa-chevron-right"
+            aria-hidden="true"
+            style="transform: rotate(0deg)"
+          ></i>
+        </div>
+
+        <!-- Automatically Generated - dynamicNav.js -->
+        <div class="list"></div>
+      </div>
+      <!-- ! dynamicNav End -->
+    </nav>
+
+    <!-- Example Sections -->
+    <header>
+      <h2>Header</h2>
+      <a class="view" href="https://github.com/jacobday/ids-resources/tree/main/dynamic-navbar" target="_blank">View code on GitHub</a>
+    </header>
+
+    <section data-index="Section 1 Title">
+      <h2>Section 1</h2>
+    </section>
+
+    <section data-index="Section 2 Title">
+      <h2>Section 2</h2>
+    </section>
+
+    <section data-index="Section 3 Title">
+      <h2>Section 3</h2>
+    </section>
+
+    <section data-index="Section 4 Title">
+      <h2>Section 4</h2>
+    </section>
+
+    <!-- Jquery cdn — used to set data scroll speed (set in ids.js file) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/ids.js"></script>
+
+    <!-- ! Link to dynamicNav.js -->
+    <script src="./js/dynamicNav.js"></script>
+  </body>
+</html>

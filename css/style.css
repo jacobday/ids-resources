@@ -35,11 +35,16 @@ nav h1 {
   font-weight: 500;
   text-transform: uppercase;
 
-  margin: 2em 0;
+  margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 .tools-templates .container {
   display: flex;
+}
+
+.tools {
+  margin-bottom: 6em;
 }
 
 /* Cards */
