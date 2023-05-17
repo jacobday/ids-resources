@@ -90,3 +90,13 @@ nav h1 {
 .card p {
   font-size: 0.9em;
 }
+
+/* Template Cards */
+.templates .card {
+  flex-direction: column;
+}
+
+.templates .card img {
+  aspect-ratio: 2 / 1;
+  object-position: center;
+}
