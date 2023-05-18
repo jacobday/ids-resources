@@ -1,9 +1,10 @@
-.view {
+.view-code {
   color: white;
   text-decoration: none;
 
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   border: 1px solid rgb(0, 0, 0);
   border-radius: 25px;
@@ -17,7 +18,7 @@
   transition: all 0.2s ease;
 }
 
-.view:hover {
+.view-code:hover {
   text-decoration: underline;
   background-color: rgba(0, 0, 0, 0.75);
 }

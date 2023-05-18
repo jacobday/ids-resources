@@ -1,0 +1,314 @@
+@font-face {
+  font-family: "Menlo Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Menlo Regular"),
+    url("../../assets/Menlo-Regular.woff") format("woff");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+
+:root {
+  --font-serif: "PT Serif", serif;
+  --front-monospace: "Menlo Regular", monospace;
+
+  --color-darkgray: #131314;
+  --color-gray: #222224;
+  --color-lightgray: #303033;
+  --color-text: rgba(255, 255, 255, 0.9);
+  --color-green: green;
+  --color-green-hover: #016f01;
+  --color-red: #a93539;
+  --color-red-hover: #95292c;
+
+  --theme-transition: 0.1s all ease;
+}
+
+main {
+  /* height: 100vh; */
+
+  color: var(--color-text);
+  font-family: var(--global-sans-serif);
+  background-color: var(--color-gray);
+
+  /* display: flex;
+  gap: 1em; */
+
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-left: 0.5em;
+}
+
+.input-container {
+  display: flex;
+  gap: 1em;
+}
+
+.old-container,
+.new-container {
+  height: 85vh;
+  width: 50%;
+}
+
+textarea, #output {
+  color: var(--color-text);
+  background-color: var(--color-darkgray);
+
+  border: none;
+  border-radius: 20px 20px 0 0;
+
+  padding: 1em;
+
+  box-sizing: border-box;
+  resize: none;
+}
+
+#output {
+  color: var(--color-green)
+}
+
+.old-container textarea,
+.new-container textarea {
+  height: 80%;
+  width: 100%;
+}
+
+.old-container button,
+.new-container button,
+.output-container button {
+  width: 100%;
+
+  color: var(--color-text);
+  background-color: var(--color-green);
+
+  border: none;
+  border-radius: 0 0 20px 20px;
+  padding: 0.5em 1em;
+
+  cursor: pointer;
+  transition: var(--theme-transition);
+}
+
+.old-container button:hover,
+.new-container button:hover,
+.output-container button:hover {
+  background-color: var(--color-green-hover);
+}
+
+.new-container .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-container .wrapper i {
+  font-size: 1.7em;
+
+  margin-right: 1em;
+  cursor: pointer;
+
+  transition: var(--theme-transition);
+}
+
+.new-container .wrapper i:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.output-container {
+  height: 90vh;
+  width: 100%;
+}
+
+.output-container #output {
+  height: 85%;
+  width: 100%;
+  cursor: pointer;
+}
+
+textarea.code {
+  font-family: var(--front-monospace);
+  font-size: 12px;
+  padding: 18px;
+}
+
+textarea.type, #output {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Highlight Colors */
+.highlight-red {
+  color: var(--color-red);
+}
+
+.highlight-green {
+  color: var(--color-green);
+}
+
+/* Settings */
+.settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: none;
+}
+
+.settings-menu {
+  border-radius: 30px;
+
+  background-color: var(--color-lightgray);
+  box-shadow: 3px 9px 18px rgba(0, 0, 0, 0.2);
+}
+
+.settings-menu h1 {
+  font-size: 2.5em;
+  text-align: center;
+
+  margin: 0;
+  margin-top: 0.25em;
+
+  letter-spacing: 0.5px;
+}
+
+.settings-menu .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  padding: 1em;
+}
+
+.settings-menu .container > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-menu label {
+  margin-left: 1em;
+}
+
+label[for="sectionHtml"] i {
+  font-family: var(--font-serif);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.settings-menu textarea {
+  border-radius: 20px;
+
+  margin-top: 0.25em;
+}
+
+p.credit {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+
+  margin: 0 1em;
+}
+
+p.credit a {
+  color: inherit;
+  text-decoration: none;
+
+  border-bottom: 1px solid white;
+}
+
+p.credit a:hover {
+  border-bottom: none;
+}
+
+#closeBtn {
+  width: 100%;
+
+  color: var(--color-text);
+  background-color: var(--color-red);
+
+  border: none;
+  border-radius: 0 0 20px 20px;
+
+  padding: 0.5em 1em;
+
+  cursor: pointer;
+  transition: var(--theme-transition);
+}
+
+#closeBtn:hover {
+  background-color: var(--color-red-hover);
+}
+
+/* Custom Checkbox */
+input[type="checkbox"].hide {
+  display: none;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.checkbox {
+  width: 50px;
+  height: 25px;
+
+  background: var(--color-green);
+  border-radius: 20px;
+
+  padding: 5px;
+  transition: 0.3s ease-in-out;
+
+  cursor: pointer;
+}
+
+.checkbox-switch {
+  width: 25px;
+  height: 25px;
+
+  border-radius: 100%;
+  background: var(--color-text);
+
+  display: block;
+
+  transition: 0.3s ease-in-out;
+}
+
+.checkbox.checked {
+  background: var(--color-green);
+}
+
+.checkbox.checked .checkbox-switch {
+  transform: translate(24px);
+}
+
+.checkbox.unchecked {
+  background: var(--color-gray);
+}
+
+.chkBox.unchecked .chkBox-switch {
+  transform: translate(0);
+}
+
+/* Reset button */
+.reset {
+  width: fit-content;
+
+  color: var(--color-red);
+  border-bottom: 1px solid var(--color-red);
+
+  margin: 0 1em;
+  cursor: pointer;
+}
+
+.reset:hover {
+  border-bottom: 1px solid transparent;
+}

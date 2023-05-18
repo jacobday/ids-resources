@@ -41,6 +41,7 @@ nav h1 {
 
 .tools-templates .container {
   display: flex;
+  gap: 1em;
 }
 
 .tools {
@@ -49,6 +50,8 @@ nav h1 {
 
 /* Cards */
 .card {
+  width: 450px;
+
   color: var(--color-text);
   background-color: var(--color-darkgray);
 
