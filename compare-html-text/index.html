@@ -35,27 +35,26 @@
   <body>
     <main>
       <div class="input-container">
-        <div class="old-container">
-          <h2>Old Text</h2>
+        <div class="html-container">
+          <h2>HTML Input</h2>
   
           <textarea
-            id="input-old"
-            class="type"
-            placeholder="Paste HTML or text here"
+            id="input-html"
+            class="code"
+            placeholder="Paste HTML here"
           ></textarea>
           <button class="copy-button">Copy</button>
         </div>
   
-        <div class="new-container">
+        <div class="text-container">
           <div class="wrapper">
-            <h2>New Text</h2>
-            <i id="openBtn" class="fa-solid fa-gear"></i>
+            <h2>Text Input</h2>
           </div>
   
           <textarea
-            id="input-new"
+            id="input-text"
             class="type"
-            placeholder="Paste HTML or text here"
+            placeholder="Paste text here"
           ></textarea>
           <button class="copy-button">Copy</button>
         </div>
@@ -67,38 +66,7 @@
           <h2>Output</h2>
         </div>
 
-        <!-- <textarea
-          id="output"
-          class="type"
-          placeholder="Output will appear here"
-          readonly
-        ></textarea> -->
-
         <div id="output" class="type"></div>
-        <button class="copy-button">Copy</button>
-      </div>
-
-      <!-- Settings -->
-      <div class="settings-container">
-        <div class="settings-menu">
-          <div class="container">
-            <h1>Settings</h1>
-            <div class="checkbox-container">
-              <label for="checkStripHtml">
-                <div>Strip HTML</div>
-                <input
-                  type="checkbox"
-                  name="checkStripHtml"
-                  id="checkStripHtml"
-                  checked
-                />
-              </label>
-            </div>
-
-            <div class="reset">Reset settings</div>
-          </div>
-          <button id="closeBtn">Close</button>
-        </div>
       </div>
     </main>
 

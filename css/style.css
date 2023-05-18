@@ -26,7 +26,7 @@ nav h1 {
 
 /* Tools & Templates Section */
 .tools-templates {
-  padding-left: 3em;
+  padding: 0 3em;
 }
 
 .tools-templates h2 {
@@ -50,7 +50,7 @@ nav h1 {
 
 /* Cards */
 .card {
-  width: 450px;
+  width: 33%;
 
   color: var(--color-text);
   background-color: var(--color-darkgray);
@@ -101,5 +101,5 @@ nav h1 {
 
 .templates .card img {
   aspect-ratio: 2 / 1;
-  object-position: center;
+  object-position: center top;
 }

@@ -25,14 +25,9 @@
 }
 
 main {
-  /* height: 100vh; */
-
   color: var(--color-text);
   font-family: var(--global-sans-serif);
   background-color: var(--color-gray);
-
-  /* display: flex;
-  gap: 1em; */
 
   padding: 1em;
   box-sizing: border-box;
@@ -47,8 +42,8 @@ h2 {
   gap: 1em;
 }
 
-.old-container,
-.new-container {
+.html-container,
+.text-container {
   height: 85vh;
   width: 50%;
 }
@@ -67,17 +62,18 @@ textarea, #output {
 }
 
 #output {
-  color: var(--color-green)
+  color: var(--color-green);
+  border-radius: 20px;
 }
 
-.old-container textarea,
-.new-container textarea {
+.html-container textarea,
+.text-container textarea {
   height: 80%;
   width: 100%;
 }
 
-.old-container button,
-.new-container button,
+.html-container button,
+.text-container button,
 .output-container button {
   width: 100%;
 
@@ -92,19 +88,19 @@ textarea, #output {
   transition: var(--theme-transition);
 }
 
-.old-container button:hover,
-.new-container button:hover,
+.html-container button:hover,
+.text-container button:hover,
 .output-container button:hover {
   background-color: var(--color-green-hover);
 }
 
-.new-container .wrapper {
+.text-container .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.new-container .wrapper i {
+.text-container .wrapper i {
   font-size: 1.7em;
 
   margin-right: 1em;
@@ -113,7 +109,7 @@ textarea, #output {
   transition: var(--theme-transition);
 }
 
-.new-container .wrapper i:hover {
+.text-container .wrapper i:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -125,7 +121,6 @@ textarea, #output {
 .output-container #output {
   height: 85%;
   width: 100%;
-  cursor: pointer;
 }
 
 textarea.code {
