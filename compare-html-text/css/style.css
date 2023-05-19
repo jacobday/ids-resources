@@ -48,7 +48,8 @@ h2 {
   width: 50%;
 }
 
-textarea, #output {
+textarea,
+#output {
   color: var(--color-text);
   background-color: var(--color-darkgray);
 
@@ -62,8 +63,8 @@ textarea, #output {
 }
 
 #output {
-  color: var(--color-green);
   border-radius: 20px;
+  white-space: pre;
 }
 
 .html-container textarea,
@@ -114,7 +115,7 @@ textarea, #output {
 }
 
 .output-container {
-  height: 90vh;
+  min-height: 90vh;
   width: 100%;
 }
 
@@ -129,7 +130,8 @@ textarea.code {
   padding: 18px;
 }
 
-textarea.type, #output {
+textarea.type,
+#output {
   font-family: var(--font-serif);
   font-size: 18px;
   line-height: 1.6;
@@ -137,11 +139,16 @@ textarea.type, #output {
 
 /* Highlight Colors */
 .highlight-red {
-  color: var(--color-red);
+  background-color: rgba(255, 0, 0, 0.1);
+
+  border-radius: 5px;
+  text-decoration-line: line-through;
 }
 
 .highlight-green {
-  color: var(--color-green);
+  background-color: rgba(0, 255, 0, 0.1);
+
+  border-radius: 5px;
 }
 
 /* Settings */

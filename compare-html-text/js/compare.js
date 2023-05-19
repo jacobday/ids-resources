@@ -2,27 +2,46 @@ function compareInputs() {
   const inputHtml = removeHtmlTags(document.querySelector("#input-html").value);
   const inputText = document.querySelector("#input-text").value;
 
-  if (inputHtml === inputText) {
-    document.querySelector("#output").innerHTML = "Inputs are the same";
-    return;
-  }
+  // Calculate differences using the diff_match_patch library
+  // https://github.com/google/diff-match-patch
+  let differences = diff_match_patch.prototype.diff_main(inputHtml, inputText);
 
+  // Highlight deletions, insertions, and matches
   let highlightedText = "";
 
-  for (let i = 0; i < inputText.length; i++) {
-    if (inputText[i] !== inputHtml[i]) {
+  differences.forEach((difference) => {
+    let diffText = escapeString(difference[1]);
+
+    if (difference[0] === -1) {
+      highlightedText += '<span class="highlight-red">' + diffText + "</span>";
+    } else if (difference[0] === 1) {
       highlightedText +=
-        '<span class="highlight-red">' + inputText[i] + "</span>";
-    } else if (inputText[i] == inputHtml[i]) {
-      highlightedText +=
-        '<span class="highlight-green">' + inputText[i] + "</span>";
+        '<span class="highlight-green">' + diffText + "</span>";
     } else {
-      highlightedText += inputText[i];
+      highlightedText += diffText;
     }
-  }
+  });
 
   // Update output
   document.querySelector("#output").innerHTML = highlightedText;
+}
+
+function escapeString(str) {
+  const escapeMap = {
+    // "\\": "\\\\", // Backslash
+    // "'": "\\'", // Single quote
+    // '"': '\\"', // Double quote
+    // "\b": "\\b", // Backspace
+    // "\f": "\\f", // Form feed
+    "\n": "<br>", // Newline
+    // "\r": "\\r", // Carriage return
+    // "\t": "\\t", // Tab
+    // "\v": "\\v", // Vertical tab
+  };
+
+  // Replace each escape character with its escaped version
+  // return str.replace(/[\\'\b\f\n\r\t\v]/g, (match) => escapeMap[match]);
+  return str.replace(/[\n]/g, (match) => escapeMap[match]);
 }
 
 function removeHtmlTags(inputText) {
@@ -31,7 +50,7 @@ function removeHtmlTags(inputText) {
   div.innerHTML = inputText;
 
   // Then the text content of the div is the input value without HTML tags
-  const strippedHtml = div.textContent || div.innerText || "";
+  let strippedHtml = div.textContent || div.innerText || "";
 
   return strippedHtml;
 }
