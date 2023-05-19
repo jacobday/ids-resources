@@ -21,5 +21,5 @@
 
 ## Live Examples
 
-- [Dynamic Navbar Template](https://ids.jacob.day/dynamic-navbar)
+- [Dynamic Navbar Template](https://ids.jacob.day/templates/dynamic-navbar)
 - Published IDS example: [Hoosier Heroes](https://specials.idsnews.com/iu-basketball-guide-2022-2023/)
