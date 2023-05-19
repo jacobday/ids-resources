@@ -1,0 +1,167 @@
+:root {
+  --font-sans-serif: "Inter", sans-serif;
+
+  /* colors */
+  --gray05: rgb(242, 242, 242);
+  --gray70: rgb(77, 77, 77);
+  --gray80: rgb(51, 51, 51);
+  --darkgray: rgb(80, 80, 80);
+
+  /* widths */
+  --width-lg: 992px;
+
+  /* padding/margin variables */
+  --xxs: 4px;
+}
+
+/* Image Styling */
+.image-featured {
+  width: 90vw;
+  max-width: var(--width-lg);
+
+  margin: 0 auto;
+}
+
+.image-featured figure {
+  border-radius: 10px;
+  outline: 0px solid transparent;
+}
+
+.image-featured img {
+  height: 330px;
+  max-height: 70vh;
+  width: 100%;
+
+  border-radius: 10px 10px 0 0;
+  outline: 0px solid transparent;
+
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.image-featured figcaption {
+  color: var(--gray70);
+  font-family: var(--font-sans-serif);
+  font-size: 14px;
+  line-height: 1.25em;
+
+  background: url("../assets/noise.svg"),
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+
+  border-right: 1px solid rgba(100, 100, 100, 0.05);
+  border-bottom: 1px solid rgba(100, 100, 100, 0.05);
+  border-left: 1px solid rgba(100, 100, 100, 0.05);
+  border-radius: 0px 0px 10px 10px;
+
+  padding: 0.5em 1em 1em 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  z-index: -1;
+  position: relative;
+}
+
+/* Gallery Styling */
+.gallery-container {
+  position: relative;
+}
+
+.gallery {
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  will-change: scroll-position;
+}
+
+.credit {
+  font-size: 0.9em;
+  font-family: var(--font-sans-serif);
+
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 1.2em;
+
+  color: var(--darkgray);
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3px;
+
+  margin-bottom: 3px;
+  margin-top: 0;
+  padding-top: var(--xxs);
+}
+
+.gallery-container .credit svg {
+  height: 14px;
+
+  fill: var(--gray80);
+
+  border-left: 1.5px solid var(--darkgray);
+
+  padding: 1px;
+  padding-left: 4px;
+}
+
+.gallery .sticky-inner {
+  min-width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  overflow: hidden;
+
+  padding-top: calc(58px + 7vh);
+}
+
+.gallery .image-featured figure {
+  pointer-events: none;
+}
+
+/* MEDIA QUERIES FROM SMALLEST TO LARGEST = MOBILE FIRST */
+/* use these for responsive design — you can set different styles based on how wide the screen is */
+/* Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .gallery .sticky-inner {
+    padding-top: calc(58px + 4vh);
+  }
+
+  .image-featured img {
+    height: 500px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .gallery .sticky-inner {
+    padding-top: 58px;
+  }
+
+  .image-featured img {
+    height: 550px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .image-featured img {
+    height: 600px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .gallery .sticky-inner {
+    padding-top: calc(58px + 1vh);
+  }
+}
