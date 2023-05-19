@@ -1,6 +1,6 @@
 # IDS Resources
 
-Templates &amp; productivity tools for the IDS
+Templates &amp; productivity tools for the Indiana Daily Student
 
 ## Tools
 
