@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: normal;
   src: local("Menlo Regular"),
-    url("../../assets/Menlo-Regular.woff") format("woff");
+    url("../../../assets/fonts/Menlo-Regular.woff") format("woff");
 }
 
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");

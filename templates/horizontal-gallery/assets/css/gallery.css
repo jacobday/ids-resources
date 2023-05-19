@@ -45,7 +45,7 @@
   font-size: 14px;
   line-height: 1.25em;
 
-  background: url("../assets/noise.svg"),
+  background: url("../images/noise.svg"),
     linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 
   border-right: 1px solid rgba(100, 100, 100, 0.05);

@@ -3,9 +3,9 @@
 ## Setup
 
 1. From [index.html](./index.html), copy ``` <div id="gallery-container"> ``` (lines 27 to 124) into your project
-1. Copy the styling from [gallery.css](./css/gallery.css) into your stylesheet
-1. Copy [gallery.js](./js/gallery.js) into your project
-1. Copy [noise.svg](./assets/noise.svg) into your assets folder (optional)
+1. Copy the styling from [gallery.css](./assets/css/gallery.css) into your stylesheet
+1. Copy [gallery.js](./assets/js/gallery.js) into your project
+1. Copy [noise.svg](./assets/images/noise.svg) into your images folder (optional)
 
 ## Adding images
 

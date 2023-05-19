@@ -3,9 +3,9 @@
 ## Setup
 
 1. From [index.html](./index.html), copy ``` <div id="dynamicNav"> ``` (lines 45 to 57) into your ``` <nav> ```
-1. Copy the styling from [dynamicNav.css](./css/dynamicNav.css) into your stylesheet
-1. Copy [dynamicNav.js](./js/dynamicNav.js) into your project
-1. From [ids.js](./js/ids.js), copy lines 10, 21, and 26 into your ``` ids.js ```
+1. Copy the styling from [dynamicNav.css](./assets/css/dynamicNav.css) into your stylesheet
+1. Copy [dynamicNav.js](./assets/js/dynamicNav.js) into your project
+1. From [ids.js](./assets/js/ids.js), copy lines 10, 21, and 26 into your ``` ids.js ```
 
 ## Adding sections
 
