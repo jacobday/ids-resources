@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600");
+
+:root {
+  --color-header-background: #333;
+  --color-header-text: #fff;
+  --color-paper-background: #f1ede9;
+  --color-paper-lines: #94acd4;
+}
+
+/* Notepad */
+.notepad {
+  margin: 3em auto 24px auto;
+  overflow: hidden;
+}
+
+.notepad .top {
+  /* width: 100%; */
+  height: 50px;
+
+  color: var(--color-header-text);
+
+  background: var(--color-header-background);
+  border-radius: 5px 5px 0 0;
+
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+}
+
+.notepad .top p {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+.notepad .top span {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8em;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.notepad .paper {
+  /* width: 100%; */
+
+  font-family: "Inter", sans-serif;
+  font-size: 1.2em;
+  line-height: 32px;
+
+  background: repeating-linear-gradient(
+    var(--color-paper-background),
+    var(--color-paper-background) 31px,
+    var(--color-paper-lines) 31px,
+    var(--color-paper-lines) 32px
+  );
+
+  padding: 35px 20px;
+}
+
+.notepad .footer {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9em;
+  font-style: italic;
+
+  background-color: var(--color-paper-background);
+
+  padding: 8px 20px;
+}

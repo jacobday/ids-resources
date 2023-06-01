@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+  font-family: 'PT Serif', serif;
+}
+
+section {
+  max-width: 768px;
+
+  padding-left: 16px;
+  padding-right: 16px;
+  
+  margin-left: auto;
+  margin-right: auto;
+}
