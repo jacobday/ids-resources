@@ -15,3 +15,5 @@ Templates &amp; productivity tools for the Indiana Daily Student
 | --- | --- | --- |
 | Dynamic Navbar | [./templates/dynamic-navbar/](./templates/dynamic-navbar/) | [Dynamic Navbar Example](https://ids.jacob.day/templates/dynamic-navbar/) |
 | Horizontal Scrolling Gallery | [./templates/horizontal-gallery/](./templates/horizontal-gallery/) | [Horizontal Scrolling Gallery Example](https://ids.jacob.day/templates/horizontal-gallery/) |
+| Content Warning | [./templates/content-warning/](./templates/content-warning/) | [Content Warning Example](https://ids.jacob.day/templates/content-warning/) |
+| Notepad | [./templates/notepad/](./templates/notepad/) | [Notepad Example](https://ids.jacob.day/templates/notepad/) |
