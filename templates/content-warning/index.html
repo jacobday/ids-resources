@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/normalize.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- * Content Warning Styling -->
+    <link rel="stylesheet" href="./assets/css/contentWarning.css" />
+
+    <link rel="stylesheet" href="./assets/css/example.css" />
+
+    <title>Content Warning Template</title>
+  </head>
+  <body>
+    <!-- View code button -->
+    <a
+      class="view-code"
+      href="https://github.com/jacobday/ids-resources/tree/main/templates/content-warning"
+      target="_blank"
+      >View code on GitHub</a
+    >
+
+    <section>
+      <!-- Custom Container Example -->
+      <div class="example-container">
+        <!-- ! Content Warning Start -->
+        <div class="content-warning">
+          <p class="warning">Content warning: <span>Sensitive content</span></p>
+          <p class="notice">Excerpt from anonymous GreekRank post</p>
+          <button>Show</button>
+        </div>
+        <!-- ! Content Warning End -->
+
+        <div class="head"></div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
+            repellendus autem quod voluptatum. Earum quas ratione expedita
+            ipsum, doloribus quo cumque officia, odit reprehenderit maiores
+            temporibus eum porro adipisci ducimus.
+          </p>
+        
+        </div>
+        <div class="footer">
+          <div>Excerpt from anonymous GreekRank post</div>
+
+          <!-- ! Content Warning Hide Button -->
+          <span id="hideBtn">Hide content</span>
+        </div>
+      </div>
+
+      <!-- Figure Example -->
+      <figure class="example-container">
+        <!-- ! Content Warning Start -->
+        <div class="content-warning">
+          <p class="warning">Content warning: <span>Sensitive content</span></p>
+          <p class="notice">Graphic image</p>
+          <button>Show</button>
+        </div>
+        <!-- ! Content Warning End -->
+
+        <img src="https://picsum.photos/350" alt="Sample image" />
+
+        <figcaption>
+          Lorem, ipsum dolor sit amet consectetur adipisicing.
+          <!-- <span id="hideBtn">Hide content</span> -->
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ! Link to content_warning.js -->
+    <script src="./assets/js/content_warning.js"></script>
+  </body>
+</html>
