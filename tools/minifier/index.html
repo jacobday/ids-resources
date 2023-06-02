@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3X7WQRJNLY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-3X7WQRJNLY");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../assets/css/normalize.css" />
+    <link rel="stylesheet" href="https://jacob.day/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Minifier</title>
+  </head>
+  <body>
+    <main>
+      <div class="input-container">
+        <h2>Input</h2>
+
+        <textarea
+          id="input"
+          class="code"
+          placeholder="Input code here"
+        ></textarea>
+
+        <div class="meta-container">
+          <div id="language" title="Detected language">Unknown Language</div>
+          <div id="inputSize" title="Input size">0 bytes</div>
+        </div>
+
+        <button class="copy-button">Copy</button>
+      </div>
+
+      <div class="output-container">
+        <div class="wrapper">
+          <h2>Output</h2>
+        </div>
+
+        <textarea id="output" class="code" placeholder="" readonly></textarea>
+
+        <div class="meta-container">
+          <div id="outputSize" title="Output size">0 bytes (0.00% improvement)</div>
+        </div>
+
+        <button class="copy-button">Copy</button>
+      </div>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Menlo Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Menlo Regular"),
+    url("../../../assets/fonts/Menlo-Regular.woff") format("woff");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+
+:root {
+  --font-serif: "PT Serif", serif;
+  --front-monospace: "Menlo Regular", monospace;
+
+  --color-darkgray: #131314;
+  --color-gray: #222224;
+  --color-lightgray: #303033;
+  --color-text: rgba(255, 255, 255, 0.9);
+  --color-green: green;
+  --color-green-hover: #016f01;
+  --color-red: #a93539;
+  --color-red-hover: #95292c;
+
+  --theme-transition: 0.1s all ease;
+}
+
+main {
+  height: 100vh;
+
+  color: var(--color-text);
+  font-family: var(--global-sans-serif);
+  background-color: var(--color-gray);
+
+  display: flex;
+  gap: 1em;
+
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-left: 0.5em;
+}
+
+.input-container,
+.output-container {
+  width: 50%;
+}
+
+textarea {
+  color: var(--color-text);
+  background-color: var(--color-darkgray);
+
+  border: none;
+  border-radius: 20px 20px 0 0;
+
+  padding: 1em;
+
+  box-sizing: border-box;
+  resize: none;
+}
+
+.input-container textarea,
+.output-container textarea {
+  height: 75%;
+  width: 100%;
+}
+
+.input-container button,
+.output-container button {
+  width: 100%;
+
+  color: var(--color-text);
+  background-color: var(--color-green);
+
+  border: none;
+  border-radius: 0 0 20px 20px;
+  padding: 0.5em 1em;
+
+  cursor: pointer;
+  transition: var(--theme-transition);
+}
+
+.input-container button:hover,
+.output-container button:hover {
+  background-color: var(--color-green-hover);
+}
+
+.output-container .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.output-container .wrapper i {
+  font-size: 1.7em;
+
+  margin-right: 1em;
+  cursor: pointer;
+
+  transition: var(--theme-transition);
+}
+
+.output-container .wrapper i:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.output-container textarea {
+  cursor: pointer;
+}
+
+textarea.code {
+  font-family: var(--front-monospace);
+  font-size: 12px;
+  padding: 18px;
+}
+
+textarea.type {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Meta Container */
+.meta-container {
+  font-size: 0.8em;
+
+  background-color: var(--color-darkgray);
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 4px 18px;
+}
+
+.output-container .meta-container {
+  color: var(--color-green);
+  
+  justify-content: flex-end;
+}

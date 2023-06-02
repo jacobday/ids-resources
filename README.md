@@ -8,6 +8,7 @@ Templates &amp; productivity tools for the Indiana Daily Student
 | --- | --- | --- |
 | P-tag generator | Wrap text into HTML \<p>aragraph tags | [P-tag Generator](https://ids.jacob.day/tools/p-tag-generator/) |
 | Compare HTML & Text | Compare the differences between the content of your HTML and raw text | [Compare Tool](https://ids.jacob.day/tools/compare-html-text/) |
+| Minifier | Minify your HTML, CSS, and JavaScript to improve page loading time | [Minifier](https://ids.jacob.day/tools/minifier/) |
 
 ## Templates
 
