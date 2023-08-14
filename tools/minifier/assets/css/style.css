@@ -7,9 +7,11 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
   --font-serif: "PT Serif", serif;
+  --font-sans-serif: "Inter", sans-serif;
   --front-monospace: "Menlo Regular", monospace;
 
   --color-darkgray: #131314;
@@ -28,7 +30,7 @@ main {
   height: 100vh;
 
   color: var(--color-text);
-  font-family: var(--global-sans-serif);
+  font-family: var(--font-sans-serif);
   background-color: var(--color-gray);
 
   display: flex;
@@ -135,6 +137,6 @@ textarea.type {
 
 .output-container .meta-container {
   color: var(--color-green);
-  
+
   justify-content: flex-end;
 }
